@@ -1,5 +1,23 @@
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.question}}
+<ul class="container">
+  <li class="txt" *ngFor="let item of items | async ">
+    
+    <div *ngIf="item.type==='string'">
+      {{item.question}}
+      <input  class="Answer" type="text" placeholder="{{item.placeholderText}}">
+    </div>
+    <div *ngIf="item.type==='mail'">
+      {{item.question}}
+      <input  class="Answer" type="email" placeholder="{{item.placeholderText}}">
+    </div>
+  </li>
+
+  <li class="txt" *ngFor="let option of options | async ">
+    {{option.question}}
+    <label class="customCheckBox" >
+      <input  class="checkboxAnswer" type="checkbox" 
+      >{{option.a}}
+    </label>
   </li>
 </ul>
+
+

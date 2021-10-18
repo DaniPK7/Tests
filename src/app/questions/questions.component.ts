@@ -10,8 +10,12 @@ import { Observable } from 'rxjs';
 export class QuestionsComponent implements OnInit {
 
   items: Observable<any[]>;
+  options: Observable<any[]>;
   constructor(firestore: AngularFirestore) {
     this.items = firestore.collection('questions').valueChanges();
+  
+    this.options = firestore.collection('options').valueChanges();
+    
   }
 
   ngOnInit(): void {
