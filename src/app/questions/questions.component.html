@@ -1,4 +1,5 @@
 <ul class="container">
+  <!-- 
   <li class="txt" *ngFor="let item of items | async ">
     
     <div *ngIf="item.type==='string'">
@@ -10,14 +11,29 @@
       <input  class="Answer" type="email" placeholder="{{item.placeholderText}}">
     </div>
   </li>
-
-  <li class="txt" *ngFor="let option of options | async ">
+-->
+  <!-- <li class="txt" *ngFor="let option of options | async ">
     {{option.question}}
-    <label class="customCheckBox" >
-      <input  class="checkboxAnswer" type="checkbox" 
-      >{{option.a}}
-    </label>
+    <form class="customCheckBox" >
+      <input  class="checkboxAnswer" type="checkbox" name="opA" value="a">
+      <label for="opA"> {{option.id}}</label><br>
+      <input  class="checkboxAnswer" type="checkbox" name="opB" value="b">
+      <label for="opB"> {{option.b}}</label><br>
+    </form>
+  </li>  -->
+
+  <li *ngFor="let sprueba of prueba | async ">
+    {{sprueba.id}}
+    <!-- <p *ngIf="sprueba.id=='Q1'">
+
+    </p> -->
+    <p  *ngFor="let item of nQstOptions | keyvalue">
+      {{item.value}}
+    </p>
+    <!-- 
+    <p *ngFor="let s of sPrueba | async ">{{s.q}}</p> -->
   </li>
+  
 </ul>
 
 

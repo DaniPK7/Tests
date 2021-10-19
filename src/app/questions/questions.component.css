@@ -61,10 +61,14 @@ li{
   }
   .checkboxAnswer{
       
-    background-color: rgb(204, 233, 195);
+    background-color: rgb(252, 78, 34);
+   
+    
   }
   .customCheckBox{
-    display: flex;
+    
+    display:flex;
+    justify-content: baseline;
     width: 100%;
     height: 2em;
     margin-top: 0.5em;
