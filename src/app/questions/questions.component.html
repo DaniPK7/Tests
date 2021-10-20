@@ -22,18 +22,25 @@
     </form>
   </li>  -->
 
-  <li *ngFor="let sprueba of prueba | async ">
-    {{sprueba.id}}
-    <!-- <p *ngIf="sprueba.id=='Q1'">
-
-    </p> -->
-    <p  *ngFor="let item of nQstOptions | keyvalue">
-      {{item.value}}
-    </p>
-    <!-- 
-    <p *ngFor="let s of sPrueba | async ">{{s.q}}</p> -->
+  <li class="txt" *ngFor="let sprueba of prueba | async ">
+    {{sprueba.q}}
+    <ng-container *ngIf="sprueba.id=='Q1'">
+      <li *ngFor="let s of sPrueba | async">
+        <input class="chckBx" type="checkbox" value="{{s.q}}"> {{s.q}}
+      </li>
+    </ng-container>
+    <ng-container *ngIf="sprueba.id=='Q2'">
+      <li *ngFor="let s of sPrueba2 | async">
+        <input class="chckBx" type="checkbox" value="{{s.q}" >{{s.q}}
+      </li>
+    </ng-container>
+    <ng-container *ngIf="sprueba.id=='Q3'">
+      <li *ngFor="let s of sPrueba3 | async">
+        <input class="chckBx" type="checkbox" value="{{s.q}" >{{s.q}}
+      </li>
+    </ng-container>
   </li>
-  
+  <button (click)="ShowMsg()" class="cstmButton">Print</button>
 </ul>
 
 

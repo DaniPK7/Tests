@@ -61,9 +61,15 @@ li{
   }
   .checkboxAnswer{
       
-    background-color: rgb(252, 78, 34);
-   
+    cursor: pointer;
     
+  }
+  .customCheckBox:hover ~ .checkmark{
+    background-color: #ccc;
+  }
+  .customCheckBox input:checked~ .checkboxAnswer
+  {
+    background-color: #f39121;
   }
   .customCheckBox{
     
@@ -74,4 +80,9 @@ li{
     margin-top: 0.5em;
     text-align: left;
     background-color: rgb(102, 230, 63);
+  }
+  .cstmButton
+  {
+    
+    background-color: #218ef37c;
   }
